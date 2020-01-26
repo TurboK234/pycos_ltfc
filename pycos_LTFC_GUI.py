@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 
-from tkinter import *
 import sys
 import os
 import shutil
@@ -33,6 +32,14 @@ def end1():
     sys.exit()
 
 ###
+
+try:
+    from tkinter import *
+except:
+    print('Error while importing tkinter module, maybe it\'s not installed?')
+    print('Try installing python3-tk package.')
+    print('Exiting the script.')
+    end1()
 
 print('The script file is: ' + __file__)
 script_dir = os.path.dirname(os.path.realpath(__file__))
